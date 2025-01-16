@@ -1,0 +1,1 @@
+A simple minecraft manhunt datapack for **1.21.4**. Supports both tracking in the nether and the overworld, by pointing to the portal that the person went into when changing dimension. Install by clicking the green **CODE** button on github, download the zip and then drag out the Manhunt file (the one next to the LICENSE) into your minecraft folder.
