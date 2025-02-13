@@ -1,4 +1,4 @@
-say uco
+#say uco
 
 tag @s add tracker_temp
 
