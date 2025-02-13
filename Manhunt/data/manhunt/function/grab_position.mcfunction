@@ -1,7 +1,7 @@
-execute as @e[tag=hunted] at @s if dimension minecraft:overworld store result storage manhunt:compass_data_overworld X int 1 run data get entity @s Pos[0]
-execute as @e[tag=hunted] at @s if dimension minecraft:overworld store result storage manhunt:compass_data_overworld Y int 1 run data get entity @s Pos[1]
-execute as @e[tag=hunted] at @s if dimension minecraft:overworld store result storage manhunt:compass_data_overworld Z int 1 run data get entity @s Pos[2]
+execute as @e[team=runners] at @s if dimension minecraft:overworld store result score @s manhunt_x_overworld run data get entity @s Pos[0]
+execute as @e[team=runners] at @s if dimension minecraft:overworld store result score @s manhunt_y_overworld run data get entity @s Pos[1]
+execute as @e[team=runners] at @s if dimension minecraft:overworld store result score @s manhunt_z_overworld run data get entity @s Pos[2]
 
-execute as @e[tag=hunted] at @s if dimension minecraft:the_nether store result storage manhunt:compass_data_nether X int 1 run data get entity @s Pos[0]
-execute as @e[tag=hunted] at @s if dimension minecraft:the_nether store result storage manhunt:compass_data_nether Y int 1 run data get entity @s Pos[1]
-execute as @e[tag=hunted] at @s if dimension minecraft:the_nether store result storage manhunt:compass_data_nether Z int 1 run data get entity @s Pos[2]
+execute as @e[team=runners] at @s if dimension minecraft:the_nether store result score @s manhunt_x_nether run data get entity @s Pos[0]
+execute as @e[team=runners] at @s if dimension minecraft:the_nether store result score @s manhunt_y_nether run data get entity @s Pos[1]
+execute as @e[team=runners] at @s if dimension minecraft:the_nether store result score @s manhunt_z_nether run data get entity @s Pos[2]
