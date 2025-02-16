@@ -7,6 +7,7 @@ scoreboard players reset @a manhunt_y_nether
 scoreboard players reset @a manhunt_z_nether
 
 tag @e remove manhunt_died
+tag @e remove manhunt_previous
 
 scoreboard players set Temp manhunt_enabled 1
 
