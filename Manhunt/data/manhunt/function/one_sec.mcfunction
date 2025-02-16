@@ -10,7 +10,7 @@ execute if score Temp manhunt_enabled matches 1 if score Starts: manhunt_display
 execute if score Temp manhunt_enabled matches 1 unless entity @e[team=runners,tag=!manhunt_died] run function manhunt:decide_winners
 
 #Game over detection (hunters)
-execute if score Temp manhunt_enabled matches 1 unless entity @e[team=hunters] run function manhunt:decide_winners
+execute if score Temp manhunt_enabled matches 1 unless entity @a[team=hunters] run function manhunt:decide_winners
 
 #Game over detection (dragon death)
 execute if score Temp manhunt_enabled matches 1 in minecraft:the_end if loaded 0 0 0 unless entity @e[type=minecraft:ender_dragon] run function manhunt:dragon_death
