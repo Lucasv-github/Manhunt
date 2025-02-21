@@ -31,4 +31,4 @@ team modify hunters color blue
 team modify runners color red
 
 
-tellraw @a {"text":"Manhunt 1.21.4-1 Loaded","bold":true,"color":"gold"}
+tellraw @a {"text":"Manhunt (1.17.x, 1.18.x, 1.19.x, 1.20.x, 1.21.x)-2 Loaded","bold":true,"color":"gold"}
