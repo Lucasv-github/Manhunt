@@ -19,8 +19,10 @@ execute if score Temp manhunt_enabled matches 1 if score Starts: manhunt_display
 
 function manhunt:grab_position
 
-execute if score Temp manhunt_enabled matches 1 if score Starts: manhunt_display matches 0 as @a[team=hunters] at @s if predicate manhunt:in_overworld run function manhunt:update_compass_overworld
-execute if score Temp manhunt_enabled matches 1 if score Starts: manhunt_display matches 0 as @a[team=hunters] at @s if predicate manhunt:in_nether run function manhunt:update_compass_nether
+execute if score Temp manhunt_enabled matches 1 if score Starts: manhunt_display matches 0 as @a[team=hunters] at @s if predicate manhunt:in_overworld run function manhunt:update_compass_overworld_new
+execute if score Temp manhunt_enabled matches 1 if score Starts: manhunt_display matches 0 as @a[team=hunters] at @s if predicate manhunt:in_nether run function manhunt:update_compass_nether_new
+execute if score Temp manhunt_enabled matches 1 if score Starts: manhunt_display matches 0 as @a[team=hunters] at @s if predicate manhunt:in_overworld run function manhunt:update_compass_overworld_old
+execute if score Temp manhunt_enabled matches 1 if score Starts: manhunt_display matches 0 as @a[team=hunters] at @s if predicate manhunt:in_nether run function manhunt:update_compass_nether_old
 
 execute if score Starts: manhunt_display matches 1.. run scoreboard players remove Starts: manhunt_display 1
 
