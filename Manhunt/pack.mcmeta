@@ -1,6 +1,10 @@
 {
   "pack": {
-    "pack_format": 61,
-    "description": "Manhunt datapack"
+    "description": "A minecraft manhunt datapack by lprogrammer",
+    "pack_format": 7,
+    "supported_formats": [
+      7,
+      61
+    ]
   }
 }

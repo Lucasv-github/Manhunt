@@ -13,8 +13,8 @@ execute if score Temp manhunt_enabled matches 1 unless entity @e[team=runners,ta
 execute if score Temp manhunt_enabled matches 1 unless entity @a[team=hunters] run function manhunt:decide_winners
 
 #Game over detection (dragon death)
-execute if block 1 61 0 minecraft:end_portal run function manhunt:dragon_death
-
+execute if score Temp manhunt_enabled matches 1 in minecraft:the_end as @a[predicate=manhunt:in_end] if score Temp manhunt_end matches 1.. run scoreboard players remove Temp manhunt_end 1
+execute if score Temp manhunt_enabled matches 1 if score Temp manhunt_end matches 0 unless entity @e[type=minecraft:ender_dragon] run function manhunt:dragon_death
 execute if score Temp manhunt_enabled matches 1 if score Starts: manhunt_display matches 0 as @a[team=hunters] unless entity @s[nbt={Inventory:[{id:"minecraft:compass"}]}] run give @s minecraft:compass
 
 function manhunt:grab_position
