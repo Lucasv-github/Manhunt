@@ -12,6 +12,8 @@ tag @e remove manhunt_previous
 scoreboard players set Temp manhunt_enabled 1
 scoreboard players set Temp manhunt_end 10
 
+gamemode survival @a
+
 effect give @a minecraft:saturation 100 1
 clear @a
 
