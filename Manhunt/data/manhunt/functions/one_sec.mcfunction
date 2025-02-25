@@ -3,6 +3,8 @@
 #Prevent runners from having compass
 execute if score Temp manhunt_enabled matches 1 run clear @a[team=runners] minecraft:compass
 
+execute if score Temp manhunt_enabled matches 1 as @e[team=runners] unless score @s manhunt_rid matches -2147483647.. run execute store result score @s manhunt_rid run data get entity @s UUID[0]
+
 #Prevent a late joiner from having a compass
 execute if score Temp manhunt_enabled matches 1 if score Starts: manhunt_display matches 1.. run clear @a[team=hunters] minecraft:compass
 

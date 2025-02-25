@@ -1,3 +1,6 @@
+scoreboard objectives add manhunt_rid dummy
+scoreboard objectives add manhunt_tid dummy
+
 scoreboard objectives add manhunt_ticks dummy
 scoreboard objectives add manhunt_enabled dummy
 scoreboard objectives add manhunt_end dummy
@@ -32,4 +35,4 @@ team modify hunters color blue
 team modify runners color red
 
 
-tellraw @a {"text":"Manhunt (1.17.x, 1.18.x, 1.19.x, 1.20.x, 1.21.x)-3 Loaded","bold":true,"color":"gold"}
+tellraw @a {"text":"Manhunt (1.17.x, 1.18.x, 1.19.x, 1.20.x, 1.21.x)-4 Loaded","bold":true,"color":"gold"}

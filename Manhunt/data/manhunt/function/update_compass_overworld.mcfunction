@@ -24,10 +24,8 @@ scoreboard players set Temp manhunt_dst 2147483647
 
 execute as @e[team=runners] run function manhunt:find_closest
 
-execute unless entity @e[tag=manhunt_previous,tag=manhunt_closest] run tellraw @s [{"text":""},{"text":"Now tracking: ","bold":true,"color":"gold"},{"selector":"@e[tag=manhunt_closest]"}]
-execute unless entity @e[tag=manhunt_previous,tag=manhunt_closest] run tag @e remove manhunt_previous
-
-tag @e[tag=manhunt_closest] add manhunt_previous
+execute unless score @s manhunt_tid = @e[tag=manhunt_closest,limit=1] manhunt_rid run tellraw @s [{"text":""},{"text":"Now tracking: ","bold":true,"color":"gold"},{"selector":"@e[tag=manhunt_closest]"}]
+scoreboard players operation @s manhunt_tid = @e[tag=manhunt_closest,limit=1] manhunt_rid
 
 execute store result storage manhunt:compass_data X int 1 run scoreboard players get @e[tag=manhunt_closest,limit=1] manhunt_x_o
 execute store result storage manhunt:compass_data Y int 1 run scoreboard players get @e[tag=manhunt_closest,limit=1] manhunt_y_o
