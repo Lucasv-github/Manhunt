@@ -4,7 +4,15 @@
     "pack_format": 7,
     "supported_formats": [
       7,
-      61
+      71
+    ]
+  },
+  "overlays": {
+    "entries": [
+      {
+        "directory": "1_21_5",
+        "formats": 71
+      }
     ]
   }
 }

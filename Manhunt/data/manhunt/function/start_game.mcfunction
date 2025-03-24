@@ -6,6 +6,9 @@ scoreboard players reset @a manhunt_x_n
 scoreboard players reset @a manhunt_y_n
 scoreboard players reset @a manhunt_z_n
 
+scoreboard players reset @a manhunt_tid
+
+
 tag @e remove manhunt_died
 tag @e remove manhunt_previous
 
