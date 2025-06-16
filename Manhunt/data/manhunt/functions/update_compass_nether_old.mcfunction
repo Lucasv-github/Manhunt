@@ -31,6 +31,16 @@ execute store result storage manhunt:compass_data X int 1 run scoreboard players
 execute store result storage manhunt:compass_data Y int 1 run scoreboard players get @e[tag=manhunt_closest,limit=1] manhunt_y_n
 execute store result storage manhunt:compass_data Z int 1 run scoreboard players get @e[tag=manhunt_closest,limit=1] manhunt_z_n
 
-function manhunt:set_compass_nether_old
+#Should we set to nearest (1) or make it go mad (0)
+scoreboard players set Temp reg_1 0
+
+execute unless score Temp manhunt_min_dst matches -2147483647.. run scoreboard players set Temp reg_1 1
+execute if score Temp manhunt_min_dst matches -2147483647.. if score Temp manhunt_dst >= Temp manhunt_min_dst run scoreboard players set Temp reg_1 1
+
+execute unless data entity @s Inventory[{id:"minecraft:compass",tag:{LodestoneDimension:"minecraft:the_nether"}}] run clear @s minecraft:compass
+execute unless data entity @s Inventory[{id:"minecraft:compass",tag:{LodestoneDimension:"minecraft:the_nether"}}] run give @s minecraft:compass{LodestoneDimension:"minecraft:the_nether",LodestoneTracked:0b}
+
+execute if score Temp reg_1 matches 1 run function manhunt:set_compass_nether_old
+execute if score Temp reg_1 matches 0 run function manhunt:go_mad_old
 
 tag @s remove tracker_temp

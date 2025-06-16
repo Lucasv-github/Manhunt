@@ -21,3 +21,4 @@ effect give @a minecraft:saturation 100 1
 clear @a
 
 scoreboard players operation Starts: manhunt_display = Temp manhunt_lead
+scoreboard objectives setdisplay sidebar manhunt_display

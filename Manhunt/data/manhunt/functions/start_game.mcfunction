@@ -8,6 +8,7 @@ scoreboard players reset @a manhunt_z_n
 
 scoreboard players reset @a manhunt_tid
 
+
 tag @e remove manhunt_died
 tag @e remove manhunt_previous
 
@@ -20,3 +21,4 @@ effect give @a minecraft:saturation 100 1
 clear @a
 
 scoreboard players operation Starts: manhunt_display = Temp manhunt_lead
+scoreboard objectives setdisplay sidebar manhunt_display
