@@ -1,4 +1,4 @@
-#say ucn
+#say ucno
 
 tag @s add tracker_temp
 
