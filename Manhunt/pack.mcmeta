@@ -1,10 +1,12 @@
 {
   "pack": {
     "description": "A minecraft manhunt datapack by lprogrammer",
-    "pack_format": 7,
+    "pack_format": 15,
     "supported_formats": [
-      7,
-      81
-    ]
+      15,
+      88
+    ],
+    "min_format": 15,
+    "max_format": 88
   }
 }
