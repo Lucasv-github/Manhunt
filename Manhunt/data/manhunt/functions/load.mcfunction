@@ -33,8 +33,7 @@ execute unless score Temp manhunt_lead matches -2147483647.. run scoreboard play
 team add hunters "hunters"
 team add runners "runners"
 
-team modify hunters color blue
-team modify runners color red
+scoreboard objectives add manhunt_prev dummy
+execute unless score Temp manhunt_prev matches -2147483647.. run function manhunt:first_load
 
-
-tellraw @a {"text":"Manhunt (1.17.x, 1.18.x, 1.19.x, 1.20.x, 1.21.x)-12 Loaded","bold":true,"color":"gold"}
+tellraw @a {"text":"Manhunt (1.17.x, 1.18.x, 1.19.x, 1.20.x, 1.21.x)-13 Loaded","bold":true,"color":"gold"}
