@@ -3,8 +3,8 @@ execute as @e[team=runners] unless score @s manhunt_rid matches -2147483647.. ru
 #Prevent a late joiner from having a compass
 execute if score Starts: manhunt_display matches 1.. run clear @a[team=hunters] minecraft:compass
 
-#Game over detection (runners)
-execute unless entity @e[team=runners,tag=!manhunt_died] run function manhunt:decide_winners
+#Game over detection (runners, only if no players left/none at all)
+execute if score Temp manhunt_p_left matches ..0 unless entity @e[team=runners,tag=!manhunt_died,tag=!manhunt_fake_runner] run function manhunt:decide_winners
 
 #Game over detection (hunters)
 execute unless entity @a[team=hunters] run function manhunt:decide_winners

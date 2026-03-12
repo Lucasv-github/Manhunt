@@ -22,7 +22,7 @@ execute as @e[team=runners] run scoreboard players operation @s manhunt_dst += @
 
 scoreboard players set Temp manhunt_dst 2147483647
 
-execute as @e[team=runners] run function manhunt:find_closest
+execute as @e[team=runners,tag=manhunt_true_runner] run function manhunt:find_closest
 
 execute unless score @s manhunt_tid = @e[tag=manhunt_closest,limit=1] manhunt_rid run tellraw @s [{"text":""},{"text":"Now tracking: ","bold":true,"color":"gold"},{"selector":"@e[tag=manhunt_closest]"}]
 scoreboard players operation @s manhunt_tid = @e[tag=manhunt_closest,limit=1] manhunt_rid
@@ -30,6 +30,12 @@ scoreboard players operation @s manhunt_tid = @e[tag=manhunt_closest,limit=1] ma
 execute store result storage manhunt:compass_data X int 1 run scoreboard players get @e[tag=manhunt_closest,limit=1] manhunt_x_n
 execute store result storage manhunt:compass_data Y int 1 run scoreboard players get @e[tag=manhunt_closest,limit=1] manhunt_y_n
 execute store result storage manhunt:compass_data Z int 1 run scoreboard players get @e[tag=manhunt_closest,limit=1] manhunt_z_n
+
+
+#Cludge to handle not been in nether yet
+execute if score @e[tag=manhunt_closest,limit=1] manhunt_x_n matches 0 if score @e[tag=manhunt_closest,limit=1] manhunt_y_n matches 0 if score @e[tag=manhunt_closest,limit=1] manhunt_z_n matches 0 run function manhunt:not_in_nether
+execute unless score @e[tag=manhunt_closest,limit=1] manhunt_x_n matches 0 unless score @e[tag=manhunt_closest,limit=1] manhunt_y_n matches 0 unless score @e[tag=manhunt_closest,limit=1] manhunt_z_n matches 0 run tag @s remove manhunt_not_in_nether
+
 
 #Should we set to nearest (1) or make it go mad (0)
 scoreboard players set Temp reg_1 0

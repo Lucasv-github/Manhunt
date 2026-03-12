@@ -1,5 +1,9 @@
 #say uco
 
+#Show now tracking again
+scoreboard players reset @s[tag=manhunt_not_in_nether] manhunt_tid
+tag @s remove manhunt_not_in_nether
+
 tag @s add tracker_temp
 
 #Distance calculation
@@ -22,7 +26,7 @@ execute as @e[team=runners] run scoreboard players operation @s manhunt_dst += @
 
 scoreboard players set Temp manhunt_dst 2147483647
 
-execute as @e[team=runners] run function manhunt:find_closest
+execute as @e[team=runners,tag=manhunt_true_runner] run function manhunt:find_closest
 
 execute unless score @s manhunt_tid = @e[tag=manhunt_closest,limit=1] manhunt_rid run tellraw @s [{"text":""},{"text":"Now tracking: ","bold":true,"color":"gold"},{"selector":"@e[tag=manhunt_closest]"}]
 scoreboard players operation @s manhunt_tid = @e[tag=manhunt_closest,limit=1] manhunt_rid
