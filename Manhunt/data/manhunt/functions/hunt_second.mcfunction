@@ -1,10 +1,13 @@
 execute as @e[team=runners] unless score @s manhunt_rid matches -2147483647.. run execute store result score @s manhunt_rid run data get entity @s UUID[0]
 
 #Prevent a late joiner from having a compass
-execute if score Starts: manhunt_display matches 1.. run clear @a[team=hunters] minecraft:compass
+execute if score Starts: manhunt_display matches 1.. run function manhunt:remove_compass_old
+execute if score Starts: manhunt_display matches 1.. run function manhunt:remove_compass_new
 
 #Give runners compass
-execute as @a[team=hunters] unless entity @s[nbt={Inventory:[{id:"minecraft:compass"}]}] run give @s minecraft:compass
+#No such thing as give compass old as they are different in overworld/nether
+
+execute as @a[team=hunters] run function manhunt:give_compass_new
 
 function manhunt:grab_position
 

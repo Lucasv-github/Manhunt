@@ -41,8 +41,8 @@ scoreboard players set Temp reg_1 0
 execute unless score Temp manhunt_min_dst matches -2147483647.. run scoreboard players set Temp reg_1 1
 execute if score Temp manhunt_min_dst matches -2147483647.. if score Temp manhunt_dst >= Temp manhunt_min_dst run scoreboard players set Temp reg_1 1
 
-execute unless data entity @s Inventory[{id:"minecraft:compass",tag:{LodestoneDimension:"minecraft:overworld"}}] run clear @s minecraft:compass
-execute unless data entity @s Inventory[{id:"minecraft:compass",tag:{LodestoneDimension:"minecraft:overworld"}}] run give @s minecraft:compass{LodestoneDimension:"minecraft:overworld",LodestoneTracked:0b}
+execute if data entity @s Inventory[{id:"minecraft:compass",tag:{LodestoneDimension:"minecraft:the_nether"}}] run function manhunt:remove_compass_old
+execute unless data entity @s Inventory[{id:"minecraft:compass",tag:{LodestoneDimension:"minecraft:overworld"}}] run give @s minecraft:compass{LodestoneDimension:"minecraft:overworld",LodestoneTracked:0b,Manhunt_tracker:1b}
 
 execute if score Temp reg_1 matches 1 run function manhunt:set_compass_overworld_old
 execute if score Temp reg_1 matches 0 run function manhunt:go_mad_old

@@ -1,4 +1,4 @@
-say HFR
+#say HFR
 
 #New players should be added as true-runners but new entities should be added fake runners due to tamed animals
 

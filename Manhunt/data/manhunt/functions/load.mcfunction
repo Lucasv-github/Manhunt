@@ -1,6 +1,6 @@
 scoreboard objectives add reg_1 dummy
 
-scoreboard objectives add manhunt_np_only dummy
+scoreboard objectives add manhunt_p_left dummy
 
 scoreboard objectives add manhunt_rid dummy
 scoreboard objectives add manhunt_tid dummy

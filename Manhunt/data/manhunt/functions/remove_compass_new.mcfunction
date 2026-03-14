@@ -1,0 +1,1 @@
+clear @s minecraft:compass[minecraft:custom_data={Manhunt_tracker:1b}]
