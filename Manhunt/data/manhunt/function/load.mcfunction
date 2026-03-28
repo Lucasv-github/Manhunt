@@ -38,4 +38,4 @@ team add runners "runners"
 scoreboard objectives add manhunt_prev dummy
 execute unless score Temp manhunt_prev matches -2147483647.. run function manhunt:first_load
 
-tellraw @a {"text":"Manhunt (1.17.x, 1.18.x, 1.19.x, 1.20.x, 1.21.x)-14 Loaded","bold":true,"color":"gold"}
+tellraw @a {"text":"Manhunt (1.17.x, 1.18.x, 1.19.x, 1.20.x, 1.21.x 26.1)-15 Loaded","bold":true,"color":"gold"}
