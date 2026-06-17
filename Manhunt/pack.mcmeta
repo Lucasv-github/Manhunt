@@ -4,9 +4,9 @@
     "pack_format": 15,
     "supported_formats": [
       15,
-      101.1
+      107.1
     ],
     "min_format": 15,
-    "max_format": 101.1
+    "max_format": 107.1
   }
 }
